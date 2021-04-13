@@ -1,12 +1,10 @@
 # Dependencies
 import pandas as pd
-#import splinter
 from splinter import Browser
 from bs4 import BeautifulSoup as bs
 from webdriver_manager.chrome import ChromeDriverManager
-#from selenium import webdriver
-import time
 import pymongo
+import time
 
 # Initialize PyMongo to work with MongoDBs
 conn = 'mongodb://localhost:27017'
@@ -147,16 +145,17 @@ def scrape_info():
     # Display hemisphere_image_urls
     hemisphere_image_urls
 
-    browser.quit
-    results = {
+    browser.quit()
+    mars_dictionary = []
+    mars_dict = {
         'news_title': news_title,
-        'news_paragraph': news_p,
+        'news_p': news_p,
         'featured_image': high_res_img_website,
-        'mars_table': mars_table,
-        'mars_hemispheres': hemisphere_image_urls
-}
-    print(results)
-    return results 
+        'mars_table_html_string': mars_table,
+        'hemisphere_image_urls': hemisphere_image_urls
+    }   
+    #print(mars_dict)
+    return mars_dict 
 
         
               
