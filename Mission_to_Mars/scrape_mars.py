@@ -94,7 +94,8 @@ def scrape_info():
     mars_table = mars_df.to_html()
 
     mars_table = mars_table.replace('\n', '')
-
+    # Create data frame
+    data = mars_df.to_dict(orient='records')  
     # Display mars_df
     mars_df
 
